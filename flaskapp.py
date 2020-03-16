@@ -1,9 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template, send_file
+
 app = Flask(__name__)
 
 @app.route('/')
 def	index():
-	return 'Hello from Flask!'
+	return render_template('index.html')
+
+@app.route('/aj_pryor')
+def	aj_pryor():
+	return render_template('Detailed_Cleaning_Visualization_Python.html')
+
+@app.route('/aj_pryor_download')
+def	aj_pryor_download():
+	return send_file('resources/alan_jupyter.ipynb')
+
 
 if __name__ == '__main__':
 	app.run()
