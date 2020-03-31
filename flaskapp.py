@@ -14,9 +14,5 @@ def	aj_pryor():
 def	aj_pryor_download():
 	return send_file('resources/alan_jupyter.ipynb', as_attachment=True)
 
-@app.route('/openvpn')
-def vpn():
-    return send_file('resources/rsbpi.ovpn', as_attachment=True)
-
 if __name__ == '__main__':
 	app.run()
